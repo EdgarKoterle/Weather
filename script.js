@@ -13,10 +13,24 @@ $(document).ready(function()
 				urlLink=urlLink+','+code;
 
 			urlLink=urlLink+'&appid=dd3d003b072c254def863bf7b0ba0b74';
-			$.ajax
-			{
 
-			}
+
+			$.ajax(
+			{
+				url: urlLink,
+				data: {format: 'json'},
+				error: function()
+				{
+					//chyba
+				},
+				dataType: 'json',
+				success: function(data)
+				{
+					console.log("temp: "+data.main.temp);
+					console.log("desc: "+data.weather[0].description);
+				},
+				type: 'GET'
+			});
 		}
 	});
 });
