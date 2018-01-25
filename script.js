@@ -31,7 +31,7 @@ $(document).ready(function()
 
 					$('#detailsTable').empty();
                 	var table=$('<table/>');
-                	var tr=getLine('City:', city);
+                	var tr=getLine('City:', data.name);
                 	table.append(tr);
                 	$('#detailsTable').append(table);
                 

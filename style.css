@@ -1,2 +1,45 @@
+body
+{
+	background-image: url("http://www.freeimageslive.com/galleries/nature/weather/pics/sunny_clouds_8092612.jpg");
+	background-attachment: fixed;
+}
+
+#mainTable
+{
+	border: solid;
+	margin-top: 5%;
+	text-decoration-color: black;
+}
+
+#city
+{
+	margin: 5px;
+}
+
+#countryCode
+{
+	margin: 5px;
+}
+
+#get
+{
+
+}
+
+#getTD
+{
+	text-align: center;
+}
+
+#detailsTD
+{
+	text-align: center;
+}
+
 #detailsTable tr:nth-child(even) {background: lightgrey;}
 #detailsTable tr:nth-child(odd) {background: white;}
+#detailsTable
+{
+	text-align: center;
+	align-items: center;
+}
