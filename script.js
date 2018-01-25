@@ -67,7 +67,7 @@ $(document).ready(function()
                     	tr=getLine('Max. temperature:', parseFloat(data.main.temp_max-273.15).toFixed(1)+" ℃");
                     	table.append(tr);
                     
-                    	tr=getLine('Min. temperature:', new Date(data.visibility*1000).getHours()+':'+new Date(data.visibility*1000).getMinutes());
+                    	tr=getLine('Visibility:', data.visibility+' m');
                     	table.append(tr);
 					};
 				},
