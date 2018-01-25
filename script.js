@@ -29,45 +29,45 @@ $(document).ready(function()
 					console.log("temp: "+data.main.temp);
 					console.log("desc: "+data.weather[0].description);
 
-					$('details1').empty();
+					$('#detailsTable').empty();
                 	var table=$('<table/>');
                 	var tr=getLine('City:', city);
                 	table.append(tr);
-                	$('#mainTable').append(table);
+                	$('#detailsTable').append(table);
                 
-                	var tr=getLine('Country: ', $('#code').val());
+                	tr=getLine('Country: ', data.sys.country);
                 	table.append(tr);
                 
-                	var tr=getLine('Temperature:', parseFloat(data.main.temp-273.15).toFixed(1)+" ℃");
+                	tr=getLine('Temperature:', parseFloat(data.main.temp-273.15).toFixed(1)+" ℃");
                 	table.append(tr);
                 
-                	var tr=getLine('Humidity:', data.main.humidity+" %");
+                	tr=getLine('Humidity:', data.main.humidity+" %");
                 	table.append(tr);
                 
-                	var tr=getLine('Description:', data.weather[0].description);
+                	tr=getLine('Description:', data.weather[0].description);
                 	table.append(tr);
                 
-                	var tr=getLine('Pressure:', data.main.pressure+' hPa');
+                	tr=getLine('Pressure:', data.main.pressure+' hPa');
                 	table.append(tr);
                 
                 	if ($("#details").is(":checked") == true)
                 	{
-                    	var tr=getLine('Sunrise:', data.sys.sunrise);
+                    	tr=getLine('Sunrise:', new Date(data.sys.sunrise*1000).getHours()+':'+new Date(data.sys.sunrise*1000).getMinutes());
                     	table.append(tr);
                     
-                    	var tr=getLine('Sunset:', data.sys.sunset);
+                    	tr=getLine('Sunset:', new Date(data.sys.sunset*1000).getHours()+':'+new Date(data.sys.sunset*1000).getMinutes());
                     	table.append(tr);
                     
-                    	var tr=getLine('Wind:', data.wind.speed+' m/s');
+                    	tr=getLine('Wind:', data.wind.speed+' m/s');
                     	table.append(tr); 
                     
-                    	var tr=getLine('Min. temperature:', parseFloat(data.main.temp_min-273.15).toFixed(1)+" ℃");
+                    	tr=getLine('Min. temperature:', parseFloat(data.main.temp_min-273.15).toFixed(1)+" ℃");
                     	table.append(tr);
                     
-                    	var tr=getLine('Max. temperature:', parseFloat(data.main.temp_max-273.15).toFixed(1)+" ℃");
+                    	tr=getLine('Max. temperature:', parseFloat(data.main.temp_max-273.15).toFixed(1)+" ℃");
                     	table.append(tr);
                     
-                    	var tr=getLine('Min. temperature:', data.visibility);
+                    	tr=getLine('Min. temperature:', new Date(data.visibility*1000).getHours()+':'+new Date(data.visibility*1000).getMinutes());
                     	table.append(tr);
 					};
 				},

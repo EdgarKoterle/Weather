@@ -5,6 +5,7 @@
 	<title>Weather</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="col-sm-4"></div>
@@ -12,10 +13,10 @@
 		<table>
 			<tr>
 				<td>
-					City: <input type="text" id="city">
+					City: <input type="text" id="city" placeholder="e. g. Kosice">
 				</td>
 				<td>
-					Country code: <input type="text" id="countryCode">
+					Country code: <input type="text" id="countryCode" placeholder="e. g. SK">
 				</td>
 			</tr>
 
@@ -29,8 +30,7 @@
 			</tr>
 		</table>
 
-		<div id="details1"></div>
-		<div id="details2"></div>
+		<div id="detailsTable"></div>
 	</div>
 	<div class="col-sm-4"></div>
 
