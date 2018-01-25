@@ -1,0 +1,2 @@
+#detailsTable tr:nth-child(even) {background: lightgrey;}
+#detailsTable tr:nth-child(odd) {background: white;}
