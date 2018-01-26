@@ -69,6 +69,9 @@ $(document).ready(function()
                     
                     	tr=getLine('Visibility:', data.visibility+' m');
                     	table.append(tr);
+
+                    	tr=getLine('Google map: ', "<a href=\"http://google.com/maps/search/?api=1&query="+data.coord.lat+","+data.coord.lon+"\"target=\"_blank\">"+data.name+"</a>");
+                    	table.append(tr);
 					};
 				},
 				type: 'GET'
