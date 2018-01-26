@@ -27,12 +27,24 @@ body
 
 #get
 {
+	background-color: white; 
+    color: black; 
+    border: 2px solid rgb(64,108,169);
+    transition-duration: 0.2s;
+    border-radius: 3px;
+    margin: 5px;
+    padding: 2px;
+}
 
+#get:hover
+{
+    background-color: rgb(64,108,169);
+    color: white;
 }
 
 #getTD
 {
-	text-align: center;
+	text-align: right;
 }
 
 #detailsTD
@@ -42,13 +54,9 @@ body
 
 #detailsTable tr:nth-child(even) {background: rgba(114,148,194,0.6); color: black;}
 #detailsTable tr:nth-child(odd) {background: rgba(173,216,230,0.6); color: black;}
-#detailsTable {}
-{
-	padding: 5px;	
-}
+#detailsTable {padding: 10px;}
 
 tr 
 {
 	padding: 5px;
 }
-
