@@ -44,7 +44,7 @@ body
 
 #getTD
 {
-	text-align: right;
+	text-align: center;
 }
 
 #detailsTD
@@ -59,4 +59,9 @@ body
 tr 
 {
 	padding: 5px;
+}
+
+.table 
+{
+	width: 100%;
 }

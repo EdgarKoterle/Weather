@@ -30,7 +30,7 @@ $(document).ready(function()
 					console.log("desc: "+data.weather[0].description);
 
 					$('#detailsTable').empty();
-                	var table=$('<table/>');
+                	var table=$('<table class="table"/>');
                 	var tr=getLine('City:', data.name);
                 	table.append(tr);
                 	$('#detailsTable').append(table);
@@ -38,7 +38,7 @@ $(document).ready(function()
                 	tr=getLine('Country: ', data.sys.country);
                 	table.append(tr);
                 
-                	tr=getLine('Temperature:', parseFloat(data.main.temp-273.15).toFixed(1)+" ℃");
+                	tr=getLine('Temperature:', parseFloat(data.main.temp-273.15).toFixed(1)+" °C");
                 	table.append(tr);
                 
                 	tr=getLine('Humidity:', data.main.humidity+" %");
@@ -61,10 +61,10 @@ $(document).ready(function()
                     	tr=getLine('Wind:', data.wind.speed+' m/s');
                     	table.append(tr); 
                     
-                    	tr=getLine('Min. temperature:', parseFloat(data.main.temp_min-273.15).toFixed(1)+" ℃");
+                    	tr=getLine('Min. temperature:', parseFloat(data.main.temp_min-273.15).toFixed(1)+" °C");
                     	table.append(tr);
                     
-                    	tr=getLine('Max. temperature:', parseFloat(data.main.temp_max-273.15).toFixed(1)+" ℃");
+                    	tr=getLine('Max. temperature:', parseFloat(data.main.temp_max-273.15).toFixed(1)+" °C");
                     	table.append(tr);
                     
                     	tr=getLine('Visibility:', data.visibility+' m');
