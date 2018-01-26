@@ -2,6 +2,7 @@ body
 {
 	background-image: url("http://www.freeimageslive.com/galleries/nature/weather/pics/sunny_clouds_8092612.jpg");
 	background-attachment: fixed;
+	background-repeat: no-repeat;
 	font-family: "Arial";
 	font-size: 16px;
 }
@@ -12,28 +13,35 @@ body
 	margin-top: 5%;
 	color: black;
 	background-color: rgba(255,255,255,0.5);
-	padding: 15px;
+	padding: 25px;
+	border-radius: 3px;
+	border: 1px solid rgb(50,50,50);
 }
 
 #city
 {
 	margin: 5px;
+	border: 1px solid rgb(50,50,50);
+	border-radius: 3px;
+	font-size: 15px;
 }
 
 #countryCode
 {
 	margin: 5px;
+	border: 1px solid rgb(50,50,50);
+	border-radius: 3px;
 }
 
 #get
 {
-	background-color: white; 
+	background-color: rgba(255,255,255,0.6); 
     color: black; 
-    border: 2px solid rgb(64,108,169);
+    border: 1px solid rgb(50,50,50);
     transition-duration: 0.2s;
     border-radius: 3px;
-    margin: 5px;
-    padding: 2px;
+    margin: 10px;
+    padding: 5px;
 }
 
 #get:hover
@@ -42,26 +50,38 @@ body
     color: white;
 }
 
-#getTD
+.controls
 {
 	text-align: center;
-}
-
-#detailsTD
-{
-	text-align: center;
+	padding-top: 15px;
 }
 
 #detailsTable tr:nth-child(even) {background: rgba(114,148,194,0.6); color: black;}
 #detailsTable tr:nth-child(odd) {background: rgba(173,216,230,0.6); color: black;}
-#detailsTable {padding: 10px;}
+#detailsTable {margin-top: 20px;}
 
-tr 
+td
 {
-	padding: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
 }
 
 .table 
 {
 	width: 100%;
+}
+
+
+.error
+{
+	color: red;
+	font-weight: bold;
+	text-align: center;
+}
+
+#details
+{
+	margin: 5px;
+	margin-top: 10px;
 }
