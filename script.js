@@ -82,6 +82,12 @@ $(document).ready(function()
 		}
 	});
 
+	$('#city').keypress(function(e)
+	{
+      if(e.keyCode==13)
+      	$('#get').click();
+    });
+
 	function getLine (data1, data2)
 	{
 		var tr=$("<tr/>");
