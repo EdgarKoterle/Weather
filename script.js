@@ -21,11 +21,14 @@ $(document).ready(function()
 				data: {format: 'json'},
 				error: function()
 				{
-					//chyba
+					$('#detailsTable').empty();
+					var error=$('.error').text("Error! Make sure the correct form of city and country or try again later.");
+
 				},
 				dataType: 'json',
 				success: function(data)
 				{
+					$('.error').empty();
 					console.log("temp: "+data.main.temp);
 					console.log("desc: "+data.weather[0].description);
 
@@ -70,7 +73,7 @@ $(document).ready(function()
                     	tr=getLine('Visibility:', data.visibility+' m');
                     	table.append(tr);
 
-                    	tr=getLine('Google map: ', "<a href=\"http://google.com/maps/search/?api=1&query="+data.coord.lat+","+data.coord.lon+"\"target=\"_blank\">"+data.name+"</a>");
+                    	tr=getLine('Google map: ', "<a href=\"http://google.com/maps/search/?api=1&query="+data.coord.lat+","+data.coord.lon+"\"target=\"_blank\">View "+data.name+" on map</a>");
                     	table.append(tr);
 					};
 				},
