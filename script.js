@@ -10,8 +10,6 @@ $(document).ready(function()
 		$("#moreDetails").hide();
 		var city=$("#city").val();
 		var code=$("#countryCode").val();
-		if (city.length>1)
-		{
 			var urlLink='https://api.openweathermap.org/data/2.5/weather?q=';
 			urlLink=urlLink+city;
 
@@ -103,8 +101,6 @@ $(document).ready(function()
 				},
 				type: 'GET'
 			});
-		}
-
 	});
 					
 
