@@ -85,3 +85,21 @@ td
 	margin: 5px;
 	margin-top: 10px;
 }
+
+#more
+{
+	cursor: pointer;
+}
+
+#less
+{
+	cursor: pointer;
+}
+
+.more
+{
+	text-align: center;
+}
+
+#moreDetails tr:nth-child(even) {background: rgba(114,148,194,0.6); color: black;}
+#moreDetails tr:nth-child(odd) {background: rgba(173,216,230,0.6); color: black;}

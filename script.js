@@ -1,7 +1,13 @@
 $(document).ready(function()
 {
+	var tr;
+	var table;
+	$("#more").hide();
+	$("#less").hide();
 	$("#get").click(function()
 	{
+		$("#less").hide();
+		$("#moreDetails").hide();
 		var city=$("#city").val();
 		var code=$("#countryCode").val();
 		if (city.length>1)
@@ -22,6 +28,8 @@ $(document).ready(function()
 				error: function()
 				{
 					$('#detailsTable').empty();
+					$("#less").hide();
+					$("#more").hide();
 					var error=$('.error').text("Error! Make sure the correct form of city and country or try again later.");
 
 				},
@@ -33,8 +41,8 @@ $(document).ready(function()
 					console.log("desc: "+data.weather[0].description);
 
 					$('#detailsTable').empty();
-                	var table=$('<table class="table"/>');
-                	var tr=getLine('City:', data.name);
+                	table=$('<table class="table"/>');
+                	tr=getLine('City:', data.name);
                 	table.append(tr);
                 	$('#detailsTable').append(table);
                 
@@ -52,35 +60,53 @@ $(document).ready(function()
                 
                 	tr=getLine('Pressure:', data.main.pressure+' hPa');
                 	table.append(tr);
-                
-                	if ($("#details").is(":checked") == true)
-                	{
-                    	tr=getLine('Sunrise:', new Date(data.sys.sunrise*1000).getHours()+':'+new Date(data.sys.sunrise*1000).getMinutes());
-                    	table.append(tr);
-                    
-                    	tr=getLine('Sunset:', new Date(data.sys.sunset*1000).getHours()+':'+new Date(data.sys.sunset*1000).getMinutes());
-                    	table.append(tr);
-                    
-                    	tr=getLine('Wind:', data.wind.speed+' m/s');
-                    	table.append(tr); 
-                    
-                    	tr=getLine('Min. temperature:', parseFloat(data.main.temp_min-273.15).toFixed(1)+" °C");
-                    	table.append(tr);
-                    
-                    	tr=getLine('Max. temperature:', parseFloat(data.main.temp_max-273.15).toFixed(1)+" °C");
-                    	table.append(tr);
-                    
-                    	tr=getLine('Visibility:', data.visibility+' m');
-                    	table.append(tr);
 
-                    	tr=getLine('Google map: ', "<a href=\"http://google.com/maps/search/?api=1&query="+data.coord.lat+","+data.coord.lon+"\"target=\"_blank\">View "+data.name+" on map</a>");
-                    	table.append(tr);
-					};
+                	$("#more").show();
+                
+                	$("#more").click(function()
+					{
+						$('#moreDetails').empty();
+						$('#moreDetails').show();
+                		var table2=$('<table class="table"/>');
+                		var tr2=getLine('Sunrise:', new Date(data.sys.sunrise*1000).getHours()+':'+new Date(data.sys.sunrise*1000).getMinutes());
+                		table2.append(tr2);
+                		$('#moreDetails').append(table2);
+                    
+                    	tr2=getLine('Sunset:', new Date(data.sys.sunset*1000).getHours()+':'+new Date(data.sys.sunset*1000).getMinutes());
+                    	table2.append(tr2);
+                    
+                    	tr2=getLine('Wind:', data.wind.speed+' m/s');
+                    	table2.append(tr2); 
+                    
+                    	tr2=getLine('Min. temperature:', parseFloat(data.main.temp_min-273.15).toFixed(1)+" °C");
+                    	table2.append(tr2);
+                    
+                    	tr2=getLine('Max. temperature:', parseFloat(data.main.temp_max-273.15).toFixed(1)+" °C");
+                    	table2.append(tr2);
+                    
+                    	tr2=getLine('Visibility:', data.visibility+' m');
+                    	table2.append(tr2);
+
+                    	tr2=getLine('Google map: ', "<a href=\"http://google.com/maps/search/?api=1&query="+data.coord.lat+","+data.coord.lon+"\"target=\"_blank\">View "+data.name+" on map</a>");
+                    	table2.append(tr2)
+
+                    	$("#more").hide();
+                    	$("#less").show();
+					});
+
+					$("#less").click(function()
+					{
+						$("#moreDetails").hide();
+						$("#less").hide();
+						$("#more").show();
+					});
 				},
 				type: 'GET'
 			});
 		}
+
 	});
+					
 
 	$('#city').keypress(function(e)
 	{
