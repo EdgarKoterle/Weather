@@ -28,8 +28,7 @@ $(document).ready(function()
 					$('#detailsTable').empty();
 					$("#less").hide();
 					$("#more").hide();
-					var error=$('.error').text("Error! Make sure the correct form of city and country or try again later.");
-
+					$('.error').text("Error! Make sure the correct form of city and country or try again later.");
 				},
 				dataType: 'json',
 				success: function(data)
